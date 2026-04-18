@@ -1,0 +1,240 @@
+:root {
+    --bg: #6fb5f3;
+    --bg-deep: #1e3a66;
+    --card: rgba(15, 24, 41, 0.72);
+    --card-solid: #0f1829;
+    --border: rgba(255, 255, 255, 0.15);
+    --ink: #ffffff;
+    --ink-dim: #d7e5f7;
+    --ink-body: #eaf3ff;
+    --gold: #ffd040;
+    --sky: #4da0ff;
+    --danger: #e25560;
+    --ok: #3fb576;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+
+/* Pure-CSS sky — vector-only, scales perfectly, no pixelation.
+   Layers (top to bottom):
+    1. Soft sun-glow radial up-right
+    2. SVG cloud pattern (inline data URI), several puffs at varied positions
+    3. Long linear sky gradient: pale horizon → zenith → dusk at the bottom */
+body {
+    background:
+        radial-gradient(ellipse 900px 420px at 85% 12%, rgba(255, 245, 220, 0.55), rgba(255, 245, 220, 0) 65%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice'><defs><filter id='soft' x='-20%25' y='-20%25' width='140%25' height='140%25'><feGaussianBlur stdDeviation='14'/></filter><radialGradient id='cloud' cx='50%25' cy='50%25' r='55%25'><stop offset='0%25' stop-color='white' stop-opacity='0.95'/><stop offset='60%25' stop-color='white' stop-opacity='0.55'/><stop offset='100%25' stop-color='white' stop-opacity='0'/></radialGradient></defs><g filter='url(%23soft)'><ellipse cx='210' cy='180' rx='240' ry='60' fill='url(%23cloud)'/><ellipse cx='340' cy='210' rx='180' ry='48' fill='url(%23cloud)'/><ellipse cx='760' cy='120' rx='280' ry='70' fill='url(%23cloud)'/><ellipse cx='1200' cy='260' rx='260' ry='68' fill='url(%23cloud)'/><ellipse cx='1460' cy='140' rx='200' ry='54' fill='url(%23cloud)'/><ellipse cx='80' cy='520' rx='220' ry='58' fill='url(%23cloud)'/><ellipse cx='600' cy='560' rx='320' ry='80' fill='url(%23cloud)'/><ellipse cx='1040' cy='680' rx='260' ry='62' fill='url(%23cloud)'/><ellipse cx='1380' cy='580' rx='240' ry='66' fill='url(%23cloud)'/></g></svg>") center / cover no-repeat,
+        linear-gradient(180deg, #d0ebff 0%, #92c9f8 18%, #5ea9ee 45%, #3a7dce 72%, #1f4a90 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    line-height: 1.55;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 88% 18%, rgba(255, 230, 180, 0.28), transparent 28%),
+        radial-gradient(ellipse at 0% 100%, rgba(10, 30, 70, 0.35), transparent 50%),
+        radial-gradient(ellipse at 100% 100%, rgba(10, 30, 70, 0.25), transparent 45%);
+    pointer-events: none;
+    z-index: 0;
+}
+main, .nav, footer { position: relative; z-index: 1; }
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 40px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(15, 24, 41, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 10;
+}
+.nav .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+}
+.nav .brand img { width: 40px; height: 40px; object-fit: contain; }
+.nav .brand span { color: var(--gold); }
+.nav a {
+    color: rgba(255, 255, 255, 0.82);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+.nav a:hover { color: #ffffff; background: rgba(255, 255, 255, 0.1); }
+.nav a.active { color: var(--gold); }
+.nav .spacer { flex: 1; }
+
+main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    margin-bottom: 16px;
+}
+h2 {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--gold);
+    margin: 40px 0 16px;
+}
+h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 0 8px;
+    color: var(--ink);
+}
+p, li { font-size: 16px; color: var(--ink-body); margin-bottom: 12px; }
+li { margin-left: 20px; }
+strong { color: var(--gold); font-weight: 700; }
+a { color: #7ec4ff; }
+
+.kicker {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0;
+    margin-bottom: 72px;
+    padding-top: 12px;
+}
+.hero-logo {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 0 auto 28px;
+    filter: drop-shadow(0 18px 38px rgba(0, 0, 0, 0.35));
+}
+.hero .kicker { margin-bottom: 10px; }
+.hero h1 { margin-bottom: 18px; }
+.hero .lead {
+    font-size: 20px;
+    color: #f4faff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    max-width: 620px;
+    margin: 0 auto 32px;
+}
+.hero-ctas { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+.cta {
+    display: inline-block;
+    background: var(--gold);
+    color: #111;
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: transform 0.1s ease;
+}
+.cta:hover { transform: translateY(-2px); }
+.cta.secondary { background: transparent; color: var(--ink); border: 2px solid var(--border); }
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.feature {
+    background: rgba(15, 24, 41, 0.62);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.feature h3 { color: var(--gold); font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0; margin-bottom: 8px; }
+.feature p { color: var(--ink-dim); font-size: 14px; margin: 0; }
+
+section.legal {
+    background: rgba(15, 24, 41, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 36px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+section.legal h2 { color: var(--gold); }
+section.legal p, section.legal li { color: var(--ink-body); }
+
+code, pre {
+    font-family: var(--mono);
+    background: #0a1020;
+    color: var(--gold);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 40px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 24, 41, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    gap: 12px;
+    flex-wrap: wrap;
+}
+footer a { color: #7ec4ff; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 720px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 36px; }
+    .hero-logo { max-width: 300px; margin-bottom: 20px; }
+    section.legal { padding: 26px 22px; }
+    .nav { padding: 14px 18px; flex-wrap: wrap; gap: 10px; }
+    .nav a { padding: 6px 8px; font-size: 12px; }
+    .nav .brand { font-size: 18px; }
+    main { padding: 28px 18px 60px; }
+    footer { padding: 20px 22px; text-align: center; justify-content: center; }
+}
