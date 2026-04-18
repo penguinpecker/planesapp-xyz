@@ -8,7 +8,7 @@ Routes:
 - `/copyright` — copyright + DMCA
 - `/privacy` — privacy policy
 
-All contact is consolidated at `digitalchocolateinc@gmail.com`.
+All contact is consolidated at `digitalpenguininc@gmail.com`.
 
 ## Develop
 

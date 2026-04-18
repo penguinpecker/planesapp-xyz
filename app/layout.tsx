@@ -61,8 +61,8 @@ function Footer() {
         <footer>
             <span>&copy; 2026 Digital Chocolate INC · Planes</span>
             <span>
-                <a href="mailto:digitalchocolateinc@gmail.com">
-                    digitalchocolateinc@gmail.com
+                <a href="mailto:digitalpenguininc@gmail.com">
+                    digitalpenguininc@gmail.com
                 </a>
             </span>
         </footer>

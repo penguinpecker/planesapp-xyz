@@ -111,8 +111,8 @@ export default function Privacy() {
                 <p>
                     You can request deletion of any leaderboard or purchase row
                     tied to your wallet by emailing{" "}
-                    <a href="mailto:digitalchocolateinc@gmail.com">
-                        digitalchocolateinc@gmail.com
+                    <a href="mailto:digitalpenguininc@gmail.com">
+                        digitalpenguininc@gmail.com
                     </a>{" "}
                     from an address that controls that wallet, or by signing a
                     message with that wallet and including the signature in
@@ -132,8 +132,8 @@ export default function Privacy() {
                 <h2>Contact</h2>
                 <p>
                     All enquiries:{" "}
-                    <a href="mailto:digitalchocolateinc@gmail.com">
-                        digitalchocolateinc@gmail.com
+                    <a href="mailto:digitalpenguininc@gmail.com">
+                        digitalpenguininc@gmail.com
                     </a>
                     .
                 </p>

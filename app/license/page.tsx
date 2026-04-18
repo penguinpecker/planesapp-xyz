@@ -93,8 +93,8 @@ export default function License() {
                 <h2>8. Contact</h2>
                 <p>
                     Questions about this licence:{" "}
-                    <a href="mailto:digitalchocolateinc@gmail.com">
-                        digitalchocolateinc@gmail.com
+                    <a href="mailto:digitalpenguininc@gmail.com">
+                        digitalpenguininc@gmail.com
                     </a>
                     .
                 </p>
