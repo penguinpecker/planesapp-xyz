@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Nav from "./Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,25 +37,6 @@ export const viewport = {
     initialScale: 1,
     themeColor: "#0f1829",
 };
-
-function Nav() {
-    return (
-        <nav className="nav">
-            <Link href="/" className="brand">
-                <img src="/planes_logo.png" alt="" />
-                <div>
-                    Planes<span>.</span>
-                </div>
-            </Link>
-            <div className="spacer" />
-            <Link href="/">Home</Link>
-            <Link href="/install">Install</Link>
-            <Link href="/license">License</Link>
-            <Link href="/copyright">Copyright</Link>
-            <Link href="/privacy">Privacy</Link>
-        </nav>
-    );
-}
 
 function Footer() {
     return (
