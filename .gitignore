@@ -30,3 +30,6 @@ Thumbs.db
 *.swp
 *~
 .vscode/
+
+# claude code per-user settings
+.claude/settings.local.json
