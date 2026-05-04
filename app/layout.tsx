@@ -49,6 +49,7 @@ function Nav() {
             </Link>
             <div className="spacer" />
             <Link href="/">Home</Link>
+            <Link href="/install">Install</Link>
             <Link href="/license">License</Link>
             <Link href="/copyright">Copyright</Link>
             <Link href="/privacy">Privacy</Link>

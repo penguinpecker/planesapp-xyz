@@ -15,16 +15,16 @@ export default function Home() {
                     and mint your run onto the on-chain leaderboard.
                 </p>
                 <div className="hero-ctas">
+                    <a className="cta" href="/install">
+                        Install on Seeker
+                    </a>
                     <a
-                        className="cta"
+                        className="cta secondary"
                         href="https://explorer.solana.com/address/BnyMQqouteLXiswkyZhkqCd9mMQCcxC8pabdMUypvzLt"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         View on-chain
-                    </a>
-                    <a className="cta secondary" href="/privacy">
-                        Privacy
                     </a>
                 </div>
             </section>
